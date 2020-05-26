@@ -6,10 +6,12 @@ export default function SignUpForm(props) {
         values,
         onSubmit,
         onInputChange,
-        errors
+        errors,
+        disabled
     } = props 
 
     return (
+
         <form onSubmit={onSubmit} > 
             <h2>Sign Up</h2>
 
@@ -58,7 +60,7 @@ export default function SignUpForm(props) {
             </label>
 
 
-            <button>Submit</button>
+            <button disabled={disabled}>Submit</button>
 
         </form>
     )

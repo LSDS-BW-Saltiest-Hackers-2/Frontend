@@ -22,6 +22,7 @@ function App() {
           <PrivateRoute exact path='/main-feed' component={CommentFeed} />
           <Route path='/sign-up' component={SignUp}/>
           <Route path='/login' component={Login} />
+          <Route path='/feed' component={CommentFeed}/>
           <Route component={Login} />
         </Switch>
       </div>
