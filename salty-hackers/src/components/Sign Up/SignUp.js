@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import SignUpForm from './SignUpForm'
-import * as yup from 'yup'
-import { Route } from 'react-router-dom'
+import React, { useState } from 'react';
+import axios from 'axios';
+import SignUpForm from './SignUpForm';
+import { Route, Link} from 'react-router-dom';
+import * as yup from 'yup';
+import formSchema from './validation/formSchema';
 
 
 const intaialFormValues = {
@@ -49,9 +50,27 @@ const intaialFormValues = {
       const onInputChange = evt => {
           const name = evt.target.name
           const value = evt.target.value
-          setFormValues({
-            ...formValues, [name]:value
-          })
+
+
+          yup
+            .reach(formSchema, name)
+            .validate(value)
+            .then(valid => {
+              setFormErrors({
+                ...formErrors,
+                [name]: ''
+              })
+            })
+            .catch(err => {
+              setFormErrors({
+                ...formErrors,
+                [name]:err.errors[0]
+              })
+            })
+
+            setFormValues({
+              ...formValues, [name]:value
+            })
       }    
 
         
@@ -69,11 +88,22 @@ const intaialFormValues = {
 
 
       return (
+          
+          <div>
+            <Link to='/login'>
+              <button>Login</button>
+            </Link>
+            
+          
+              <Route path='/sign-up'> 
+                <SignUpForm values = {formValues} onSubmit = {onSubmit}
+                onInputChange = {onInputChange} errors = {formErrors} />
+              </Route>
+          </div>
 
-      <Route path='/sign-up'> 
-            <SignUpForm values = {formValues} onSubmit = {onSubmit}
-            onInputChange = {onInputChange} errors = {formErrors} />
-      </Route>
+      
+      
+
       )
 
 

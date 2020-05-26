@@ -10,6 +10,7 @@ export default function SignUpForm(props) {
     } = props 
 
     return (
+
         <form onSubmit={onSubmit} > 
             <h2>Sign Up</h2>
 

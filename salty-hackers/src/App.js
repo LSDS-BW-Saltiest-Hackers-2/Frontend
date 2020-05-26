@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
-import Login from './components/Login/Login';
-import CommentFeed from './components/Feed/CommentFeed';
-import PrivateRoute from './utils/PrivateRoute';
+
+
 
 import Login from './components/Login/Login';
 import CommentFeed from './components/Feed/CommentFeed';
