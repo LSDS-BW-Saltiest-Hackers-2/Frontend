@@ -3,7 +3,7 @@ import axios from 'axios';
 import SignUpForm from './SignUpForm';
 import { Route, Link} from 'react-router-dom';
 import * as yup from 'yup';
-import formSchema from './validation/formSchema';
+import formSchema from '../../validation/formSchema';
 
 
 const intaialFormValues = {
