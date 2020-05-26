@@ -6,7 +6,8 @@ export default function SignUpForm(props) {
         values,
         onSubmit,
         onInputChange,
-        errors
+        errors,
+        disabled
     } = props 
 
     return (
@@ -59,7 +60,7 @@ export default function SignUpForm(props) {
             </label>
 
 
-            <button>Submit</button>
+            <button disabled={disabled}>Submit</button>
 
         </form>
     )

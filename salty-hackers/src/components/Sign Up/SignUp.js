@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SignUpForm from './SignUpForm';
 import { Route, Link} from 'react-router-dom';
@@ -20,6 +20,8 @@ const intaialFormValues = {
     password: ''
   }
 
+  const intialDisabled = true 
+
   const url = `https://reqres.in/api/users`
 
   export default function SignUp() {
@@ -28,6 +30,8 @@ const intaialFormValues = {
     const [ formValues, setFormValues ] = useState(intaialFormValues)
     const [ users, addUsers] = useState([])
     const [ formErrors, setFormErrors ] = useState(initalFormErrors)
+    const [ disabled, setDisabled ] = useState(intialDisabled)
+
 
   //post new user  
     const postNewUser = newUser => {
@@ -86,6 +90,13 @@ const intaialFormValues = {
           postNewUser(newUser)
           }
 
+  useEffect(() => {
+        formSchema.isValid(formValues)
+            .then(valid => {
+              setDisabled(!valid)
+            })
+          }, [formValues])
+
 
       return (
           
@@ -97,7 +108,7 @@ const intaialFormValues = {
           
               <Route path='/sign-up'> 
                 <SignUpForm values = {formValues} onSubmit = {onSubmit}
-                onInputChange = {onInputChange} errors = {formErrors} />
+                onInputChange = {onInputChange} errors = {formErrors} disabled={disabled} />
               </Route>
           </div>
 
