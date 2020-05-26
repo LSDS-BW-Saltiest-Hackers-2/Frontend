@@ -26,3 +26,5 @@ function LoginForm({ values, onChange, onSubmit }) {
         </form>
     )
 }
+
+export default LoginForm
