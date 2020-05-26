@@ -3,13 +3,22 @@ import Comment from "./Comment"
 import { Route, Link} from 'react-router-dom';
 
 
-const dummyData = {
+const dummyData = [
 
-    rank: 'High',
-    name: 'Troll Z',
-    score: 1000
+    {
+        rank: 'High',
+        name: 'Troll Z',
+        score: 1000
+    },
 
-}
+    {
+        rank: 'Low',
+        name: 'Troll X',
+        score: 1000000,
+    }
+    
+
+]
 
 function CommentFeed() {
     // vR1 Zone to implement MVP Reqsv
@@ -24,7 +33,12 @@ function CommentFeed() {
         <Route path='/feed'>
                 <div className='feed-container'>
                     <div className='feed-list'>
-                        <Comment info={dummyData}/>
+                        {
+                            dummyData.map(comment => {
+                                return <Comment info={comment}/>
+                            })
+                        }
+                        
                     </div>
                 </div>
         </Route>
