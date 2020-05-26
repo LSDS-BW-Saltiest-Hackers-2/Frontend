@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 function LoginForm({ values, onChange, onSubmit }) {
@@ -23,6 +24,7 @@ function LoginForm({ values, onChange, onSubmit }) {
             <button>
                 Log In
             </button>
+             <Link to='/sign-up'>Don't Have an Account? Sign Up Here</Link>
         </form>
     )
 }
