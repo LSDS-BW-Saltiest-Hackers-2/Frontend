@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import SignUpForm from './SignUpForm'
-import * as yup from 'yup'
-import { Route } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import SignUpForm from './SignUpForm';
+import { Route, Link} from 'react-router-dom';
+import * as yup from 'yup';
+import formSchema from '../../validation/formSchema';
 
 
 const intaialFormValues = {
@@ -19,6 +20,8 @@ const intaialFormValues = {
     password: ''
   }
 
+  const intialDisabled = true 
+
   const url = `https://reqres.in/api/users`
 
   export default function SignUp() {
@@ -27,6 +30,8 @@ const intaialFormValues = {
     const [ formValues, setFormValues ] = useState(intaialFormValues)
     const [ users, addUsers] = useState([])
     const [ formErrors, setFormErrors ] = useState(initalFormErrors)
+    const [ disabled, setDisabled ] = useState(intialDisabled)
+
 
   //post new user  
     const postNewUser = newUser => {
@@ -49,9 +54,27 @@ const intaialFormValues = {
       const onInputChange = evt => {
           const name = evt.target.name
           const value = evt.target.value
-          setFormValues({
-            ...formValues, [name]:value
-          })
+
+
+          yup
+            .reach(formSchema, name)
+            .validate(value)
+            .then(valid => {
+              setFormErrors({
+                ...formErrors,
+                [name]: ''
+              })
+            })
+            .catch(err => {
+              setFormErrors({
+                ...formErrors,
+                [name]:err.errors[0]
+              })
+            })
+
+            setFormValues({
+              ...formValues, [name]:value
+            })
       }    
 
         
@@ -67,13 +90,31 @@ const intaialFormValues = {
           postNewUser(newUser)
           }
 
+  useEffect(() => {
+        formSchema.isValid(formValues)
+            .then(valid => {
+              setDisabled(!valid)
+            })
+          }, [formValues])
+
 
       return (
+          
+          <div>
+            <Link to='/login'>
+              <button>Login</button>
+            </Link>
+            
+          
+              <Route path='/sign-up'> 
+                <SignUpForm values = {formValues} onSubmit = {onSubmit}
+                onInputChange = {onInputChange} errors = {formErrors} disabled={disabled} />
+              </Route>
+          </div>
 
-      <Route path='/sign-up'> 
-            <SignUpForm values = {formValues} onSubmit = {onSubmit}
-            onInputChange = {onInputChange} errors = {formErrors} />
-      </Route>
+      
+      
+
       )
 
 
