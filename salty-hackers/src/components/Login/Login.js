@@ -20,16 +20,19 @@ class Login extends React.Component {
         });
     };
 
-    // login = e => {
-    //     e.preventDefault();
-    //     this.setState({ isLoading: true })
-    //     axiosWithAuth()
-    //         .post('PLACEHOLDERENDPOINT', res.data.payload)
-    //         .then(res => {
-    //             console.log(res)
-    //         })
-    //         .catch(err => console.log(err));
-    // }
+    login = e => {
+        e.preventDefault();
+        this.setState({ isLoading: true })
+        axiosWithAuth()
+            .post('/auth/login', this.state.credentials)
+            .then(res => {
+                console.log('USER LOGGED IN-->', res)
+                localStorage.setItem('token', res.data)
+                this.props.history.push('/main-feed')
+                this.setState({isLoading: false})
+            })
+            .catch(err => console.log(err));
+    }
 
     render() {
         const {isLoading} = this.state
