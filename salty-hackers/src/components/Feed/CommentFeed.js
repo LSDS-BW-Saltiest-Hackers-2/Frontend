@@ -26,7 +26,7 @@ function CommentFeed() {
     // ^R1 Zone to implement MVP Reqs^
 
 
-    const [ comments, addComments ] = useState()
+    const [ comments, addComments ] = useState(dummyData)
 
     return (
 
@@ -34,7 +34,7 @@ function CommentFeed() {
                 <div className='feed-container'>
                     <div className='feed-list'>
                         {
-                            dummyData.map(comment => {
+                            comments.map(comment => {
                                 return <Comment info={comment}/>
                             })
                         }
