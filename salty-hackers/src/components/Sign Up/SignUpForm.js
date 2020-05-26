@@ -16,30 +16,10 @@ export default function SignUpForm(props) {
             <h2>Sign Up</h2>
 
         <div>
-                <div>{errors.first_name}</div>
-                <div>{errors.last_name}</div>
+              
                 <div>{errors.username}</div>
                 <div>{errors.password}</div>
         </div>
-
-
-            <label>First Name&nbsp;
-                <input
-                    value={values.first_name}
-                    onChange={onInputChange}
-                    name='first_name'
-                    type='text'
-                />
-            </label>
-
-            <label>Last Name&nbsp;
-                <input
-                    value={values.last_name}
-                    onChange={onInputChange}
-                    name='last_name'
-                    type='text'
-                />
-            </label>
 
             <label>Username&nbsp;
                 <input

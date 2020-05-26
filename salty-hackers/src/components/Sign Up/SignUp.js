@@ -7,8 +7,6 @@ import formSchema from '../../validation/formSchema';
 
 
 const intaialFormValues = {
-    first_name: '',
-    last_name: '',
     username: '',
     password: ''
   }
@@ -22,7 +20,7 @@ const intaialFormValues = {
 
   const intialDisabled = true 
 
-  const url = `https://reqres.in/api/users`
+  const url = `https://saltyhackers2.herokuapp.com/auth/register`
 
   export default function SignUp() {
     //state
@@ -37,7 +35,7 @@ const intaialFormValues = {
     const postNewUser = newUser => {
         axios.post(url, newUser)
         .then(res => {
-          console.log(res)
+          console.log(res.data, 'user created')
           addUsers([res.data, ...users])
         })
         .catch(err => {
@@ -81,11 +79,11 @@ const intaialFormValues = {
       const onSubmit = evt => {
         evt.preventDefault()
         const newUser = {
-            first_name: formValues.first_name.trim(),
-            last_name: formValues.last_name.trim(),
             username: formValues.username.trim(),
             password: formValues.password.trim(),
           }
+
+          console.log(newUser)
       
           postNewUser(newUser)
           }
