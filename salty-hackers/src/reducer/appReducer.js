@@ -1,7 +1,9 @@
 import { 
     FETCH_SAVED_COMMENTS_START,
     FETCH_SAVED_COMMENTS_SUCCESS,
-    FETCH_SAVED_COMMENTS_FAILURE
+    FETCH_SAVED_COMMENTS_FAILURE,
+    SAVE_COMMENT_SUCCESS,
+    SAVE_COMMENT_FAILURE
 } from '../action/appAction';
 
 const initialState = {
@@ -10,6 +12,7 @@ const initialState = {
 
 export const appReducer = (state = initialState, action) => {
     switch(action.type) {
+        //=============FETCH SAVED COMMENTS BELOW====================
         case FETCH_SAVED_COMMENTS_START:
             return {
                 ...state,
@@ -21,6 +24,15 @@ export const appReducer = (state = initialState, action) => {
                 isFetchingSavedComments: false
             }
         case FETCH_SAVED_COMMENTS_FAILURE:
+            return {
+                ...state
+            }
+        //=============SAVE COMMENT BELOW====================
+        case SAVE_COMMENT_SUCCESS:
+            return {
+                ...state
+            }
+        case SAVE_COMMENT_FAILURE:
             return {
                 ...state
             }
