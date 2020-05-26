@@ -1,11 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
-
-
-
 import Login from './components/Login/Login';
 import CommentFeed from './components/Feed/CommentFeed';
-
 import PrivateRoute from './utils/PrivateRoute';
 
 import './App.css';
@@ -24,6 +20,7 @@ function App() {
           <PrivateRoute exact path='/main-feed' component={CommentFeed} />
           <Route path='/sign-up' component={SignUp}/>
           <Route path='/login' component={Login} />
+          <Route path='/feed' component={CommentFeed}/>
           <Route component={Login} />
         </Switch>
       </div>

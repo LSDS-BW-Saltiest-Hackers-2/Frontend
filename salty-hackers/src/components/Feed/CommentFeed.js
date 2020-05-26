@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import Comment from "./Comment"
+import { Route, Link} from 'react-router-dom';
+
+
+const dummyData = {
+
+    rank: 'High',
+    name: 'Troll Z',
+    score: 1000
+
+}
 
 function CommentFeed() {
     // vR1 Zone to implement MVP Reqsv
 
     // ^R1 Zone to implement MVP Reqs^
 
+
+    const [ comments, addComments ] = useState()
+
     return (
-        <div className='feed-container'>
-            <div className='feed-list'>
-                {/*We need to render:
-                    - Comment Rank
-                    - Username of OP
-                    - Score from upvotes
-                */}
-            </div>
-        </div>
+
+        <Route path='/feed'>
+                <div className='feed-container'>
+                    <div className='feed-list'>
+                        <Comment info={dummyData}/>
+                    </div>
+                </div>
+        </Route>
+        
     )
 }
 
