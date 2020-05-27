@@ -1,6 +1,7 @@
 import React from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import LoginForm from './LoginForm';
+import LoadingSpinner from '../Styling/LoadingSpinner';
 
 class Login extends React.Component {
     state = {
@@ -26,19 +27,23 @@ class Login extends React.Component {
         axiosWithAuth()
             .post('/auth/login', this.state.credentials)
             .then(res => {
-                console.log('USER LOGGED IN-->', res)
-                localStorage.setItem('token', res.data)
+                // console.log(res)
+                localStorage.setItem('token', res.data.password)
                 this.props.history.push('/main-feed')
                 this.setState({isLoading: false})
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err)
+                this.props.history.push('/login')
+                this.setState({isLoading: false})
+            });
     }
 
     render() {
         const {isLoading} = this.state
         return (
             <main>
-                {isLoading ? <h1>this is a placeholder for a loading spinner component</h1> : 
+                {isLoading ? <LoadingSpinner /> : 
                 <div>
                     <LoginForm
                         values={this.state.credentials}

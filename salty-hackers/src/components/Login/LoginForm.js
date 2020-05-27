@@ -1,31 +1,35 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
-function LoginForm({ values, onChange, onSubmit }) {
+function LoginForm(props) {
     return(
-        <form onSubmit={onSubmit}>
-            <label>Username:
-                <input
-                    type='text'
-                    name='username'
-                    value={values.username}
-                    onChange={onChange}
-                />
-            </label>
-            <label>Password:
-                <input
-                    type='password'
-                    name='password'
-                    value={values.password}
-                    onChange={onChange}
-                />
-            </label>
-            <button>
+        <Form onSubmit={props.onSubmit}>
+            <FormGroup>
+                <Label>Username:
+                    <Input
+                        type='text'
+                        name='username'
+                        value={props.values.username}
+                        onChange={props.onChange}
+                    />
+                </Label>
+            </FormGroup>
+            <FormGroup>
+                <Label>Password:
+                    <Input
+                        type='password'
+                        name='password'
+                        value={props.values.password}
+                        onChange={props.onChange}
+                    />
+                </Label>
+            </FormGroup>
+            <Button>
                 Log In
-            </button>
-             <Link to='/sign-up'>Don't Have an Account? Sign Up Here</Link>
-        </form>
+            </Button>
+            <Link to='/sign-up'>Don't Have an Account? Sign Up Here</Link>
+        </Form>
     )
 }
 
