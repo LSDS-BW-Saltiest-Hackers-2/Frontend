@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Comment from "./Comment"
 import { Route, Link} from 'react-router-dom';
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
 
 
 const dummyData = [
@@ -20,13 +21,24 @@ const dummyData = [
 
 ]
 
+
+
 function CommentFeed() {
-    // vR1 Zone to implement MVP Reqsv
 
-    // ^R1 Zone to implement MVP Reqs^
+    const [ comments, addComments ] = useState([])
 
-
-    const [ comments, addComments ] = useState(dummyData)
+    useEffect(() => { 
+        axiosWithAuth().get(`https://saltyhackers2.herokuapp.com/users/`)
+          .then(res => {
+            console.log('this should only render once!')
+            console.log(res)
+            addComments(res.data)
+            console.log(comments)
+          })
+          .catch(err => {
+            console.log('nope')
+          })
+        }, [])
 
     return (
 
@@ -35,7 +47,7 @@ function CommentFeed() {
                     <div className='feed-list'>
                         {
                             comments.map(comment => {
-                                return <Comment info={comment}/>
+                                return <Comment key={comment.id} info={comment}/>
                             })
                         }
                         

@@ -28,6 +28,50 @@
   color: #61dafb;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 32px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-right: 8px;
+  background-color: #FF4500; 
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.nav-links a:hover {
+  background-color: #00BABA; 
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

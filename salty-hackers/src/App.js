@@ -14,12 +14,20 @@ function App() {
     <Router>
       <div className='app-container'>
         <div className='header-links'>
-          <Link to='/main-feed'>View Top Comments</Link>
-          <Link to='/saved-comments'>View My Saved Comments</Link>
+          <nav>
+            <Link to='/login' className='logo'>
+                <h1>Salty Hackers</h1>
+              </Link>
+            
+                <div className='nav-links'>
+                    <Link to='/feed'>View Top Comments</Link>
+                    <Link to='/saved-comments'>View My Saved Comments</Link>
+                  </div>
+            </nav>
         </div>
         <Switch>
           <PrivateRoute exact path='/saved-comments' />
-          <PrivateRoute exact path='/main-feed' component={CommentFeed} />
+          {/* <PrivateRoute exact path='/feed' component={CommentFeed} /> */}
           <Route path='/sign-up' component={SignUp}/>
           <Route path='/login' component={Login} />
           <Route path='/feed' component={CommentFeed}/>

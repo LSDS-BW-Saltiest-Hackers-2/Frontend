@@ -16,9 +16,9 @@ export default function Comment (props) {
         borderColor: '#333', borderRadius: '25px', 
         margin: '20px', padding: '20px', fontFamily: 'Courier New'}}>
             <CardBody inverse style= {{color: 'white'}}>
-                <CardTitle>Comment Rank: {info.rank}</CardTitle>
-                <CardSubtitle>Troll Name: {info.name}</CardSubtitle>
-                <CardSubtitle>Score: {info.score}</CardSubtitle>
+                <CardSubtitle>Text: {info.comment}</CardSubtitle>
+                <CardSubtitle>Score: {info.likes_total}</CardSubtitle>
+                <CardTitle>Date: {info.created_at}</CardTitle>
             </CardBody>
         </Card>
     
