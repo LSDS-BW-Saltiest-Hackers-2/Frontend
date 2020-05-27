@@ -29,7 +29,7 @@ class Login extends React.Component {
             .then(res => {
                 // console.log(res)
                 localStorage.setItem('token', res.data.password)
-                this.props.history.push('/main-feed')
+                this.props.history.push('/feed')
                 this.setState({isLoading: false})
             })
             .catch(err => {
