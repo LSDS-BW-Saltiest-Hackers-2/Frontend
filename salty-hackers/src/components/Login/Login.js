@@ -26,8 +26,8 @@ class Login extends React.Component {
         axiosWithAuth()
             .post('/auth/login', this.state.credentials)
             .then(res => {
-                console.log('USER LOGGED IN-->', res)
-                localStorage.setItem('token', res.data)
+                // console.log(res)
+                localStorage.setItem('token', res.data.password)
                 this.props.history.push('/main-feed')
                 this.setState({isLoading: false})
             })
