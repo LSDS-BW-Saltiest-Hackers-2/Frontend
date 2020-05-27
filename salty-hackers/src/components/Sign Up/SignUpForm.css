@@ -1,0 +1,13 @@
+.sign-up {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+   
+}
+
+.sign-up-header{
+    text-align: center;
+    font-weight: bold;
+}

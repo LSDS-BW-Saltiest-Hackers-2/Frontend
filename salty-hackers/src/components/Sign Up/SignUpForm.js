@@ -1,6 +1,7 @@
 import React from 'react'
 import './SignUpForm.css'
 import { Button, Form, FormGroup, Label, Input, FormText, FormFeedback } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 export default function SignUpForm(props) {
 
@@ -14,20 +15,19 @@ export default function SignUpForm(props) {
 
     return (
 
-        <Form onSubmit={onSubmit} > 
-            <h2>Sign Up</h2>
-
         <div>
-              
-                <div></div>
-                <div></div>
-        </div>
+            
+            <h2 className='sign-up-header'>Sign Up</h2>
+
+
+        <Form onSubmit={onSubmit} className='sign-up' > 
             <FormGroup>
-                    <label>Username&nbsp; </label>
-                    <input
+                    <Label>Username&nbsp; </Label>
+                    <Input
                         value={values.username}
                         onChange={onInputChange}
                         name='username'
+                        placeholder='username'
                         type='text'
                     />
                     <FormFeedback invalid>{errors.username}</FormFeedback>
@@ -35,10 +35,11 @@ export default function SignUpForm(props) {
             </FormGroup>
             
             <FormGroup>
-                <label>Password&nbsp;</label>
-                    <input
+                <Label>Password&nbsp;</Label>
+                    <Input
                         value={values.password}
                         onChange={onInputChange}
+                        placeholder='password'
                         name='password'
                         type='text'
                     />
@@ -49,8 +50,18 @@ export default function SignUpForm(props) {
 
 
             <Button disabled={disabled}>Submit</Button>
+            
+            <Link to='/login'>
+              <span>Already have an account?</span>
+            </Link>
 
         </Form>
+
+        
+    </div>
+            
+
+        
     )
 
 
