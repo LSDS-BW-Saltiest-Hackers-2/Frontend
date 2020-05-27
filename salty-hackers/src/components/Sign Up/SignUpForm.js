@@ -1,4 +1,6 @@
 import React from 'react'
+import './SignUpForm.css'
+import { Button, Form, FormGroup, Label, Input, FormText, FormFeedback } from 'reactstrap';
 
 export default function SignUpForm(props) {
 
@@ -12,37 +14,43 @@ export default function SignUpForm(props) {
 
     return (
 
-        <form onSubmit={onSubmit} > 
+        <Form onSubmit={onSubmit} > 
             <h2>Sign Up</h2>
 
         <div>
               
-                <div>{errors.username}</div>
-                <div>{errors.password}</div>
+                <div></div>
+                <div></div>
         </div>
+            <FormGroup>
+                    <label>Username&nbsp; </label>
+                    <input
+                        value={values.username}
+                        onChange={onInputChange}
+                        name='username'
+                        type='text'
+                    />
+                    <FormFeedback invalid>{errors.username}</FormFeedback>
+               
+            </FormGroup>
+            
+            <FormGroup>
+                <label>Password&nbsp;</label>
+                    <input
+                        value={values.password}
+                        onChange={onInputChange}
+                        name='password'
+                        type='text'
+                    />
+            
+            <FormFeedback invalid>{errors.password}</FormFeedback>
+            </FormGroup>
+            
 
-            <label>Username&nbsp;
-                <input
-                    value={values.username}
-                    onChange={onInputChange}
-                    name='username'
-                    type='text'
-                />
-            </label>
 
-            <label>Password&nbsp;
-                <input
-                    value={values.password}
-                    onChange={onInputChange}
-                    name='password'
-                    type='text'
-                />
-            </label>
+            <Button disabled={disabled}>Submit</Button>
 
-
-            <button disabled={disabled}>Submit</button>
-
-        </form>
+        </Form>
     )
 
 
