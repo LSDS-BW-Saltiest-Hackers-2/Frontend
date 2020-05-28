@@ -15,7 +15,7 @@ function App() {
       <div className='app-container'>
         <div className='header-links'>
           <nav>
-            <Link to='/login' className='logo'>
+            <Link to='/login' className='logo' style={{textDecoration:'none'}}>
                 <h1>Salty Hackers</h1>
               </Link>
             

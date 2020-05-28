@@ -1,7 +1,9 @@
-import React from 'react'
+
+import React from 'react';
+
+import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
 import './SignUpForm.css'
-import { Button, Form, FormGroup, Label, Input, FormText, FormFeedback } from 'reactstrap';
-import { Link } from 'react-router-dom'
+
 
 export default function SignUpForm(props) {
 
@@ -14,52 +16,42 @@ export default function SignUpForm(props) {
     } = props 
 
     return (
+        <div className='form-container'>
+            <Form onSubmit={onSubmit} > 
+                <h1>Sign Up</h1>
 
-        <div>
-            
-            <h2 className='sign-up-header'>Sign Up</h2>
+            <div>
+                <div>{errors.username}</div>
+                <div>{errors.password}</div>
+            </div>
 
-
-        <Form onSubmit={onSubmit} className='sign-up' > 
             <FormGroup>
-                    <Label>Username&nbsp; </Label>
+                <Label>Username&nbsp;
                     <Input
                         value={values.username}
                         onChange={onInputChange}
                         name='username'
-                        placeholder='username'
                         type='text'
                     />
-                    <FormFeedback invalid>{errors.username}</FormFeedback>
-               
+                </Label>
             </FormGroup>
             
-            <FormGroup>
-                <Label>Password&nbsp;</Label>
-                    <Input
-                        value={values.password}
-                        onChange={onInputChange}
-                        placeholder='password'
-                        name='password'
-                        type='text'
-                    />
+        <FormGroup>
+            <Label>Password&nbsp;
+                <Input
+                    value={values.password}
+                    onChange={onInputChange}
+                    name='password'
+                    type='text'
+                />
+            </Label>
+        </FormGroup>
             
-            <FormFeedback invalid>{errors.password}</FormFeedback>
-            </FormGroup>
-            
-
-
-            <Button disabled={disabled}>Submit</Button>
-            
-            <Link to='/login'>
-              <span>Already have an account?</span>
-            </Link>
+            <Button style={{backgroundColor:'#FF4500', fontWeight:'bold'}} disabled={disabled}>Submit</Button>
 
         </Form>
-
         
     </div>
-            
 
         
     )

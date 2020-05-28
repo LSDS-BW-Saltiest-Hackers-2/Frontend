@@ -101,13 +101,15 @@ const intaialFormValues = {
       return (
           
           <div>
-            
-            
-          
+
               <Route path='/sign-up'> 
                 <SignUpForm values = {formValues} onSubmit = {onSubmit}
                 onInputChange = {onInputChange} errors = {formErrors} disabled={disabled} />
               </Route>
+
+              <Link to='/login'>
+              <div style={{textAlign:'center'}}>Already have an account?</div>
+            </Link>
           </div>
 
       
