@@ -1,7 +1,9 @@
+
 import React from 'react';
 
 import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
 import './SignUpForm.css'
+
 
 export default function SignUpForm(props) {
 
@@ -14,7 +16,6 @@ export default function SignUpForm(props) {
     } = props 
 
     return (
-
         <div className='form-container'>
             <Form onSubmit={onSubmit} > 
                 <h1>Sign Up</h1>
@@ -51,8 +52,6 @@ export default function SignUpForm(props) {
         </Form>
         
     </div>
-
-
 
         
     )
