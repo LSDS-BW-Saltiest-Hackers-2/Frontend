@@ -3,6 +3,7 @@ import {
     Card, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
+  import profilePicture from '../../'
 
 
 export default function Comment (props) {
@@ -17,8 +18,8 @@ export default function Comment (props) {
         margin: '20px', padding: '20px'}}>
             <CardBody inverse style= {{color: 'black'}}>
                 <CardTitle>Username: {info.UserName}</CardTitle>
+                <CardSubtitle>Salty Score: {info.Saltiness}</CardSubtitle>
                 <CardSubtitle>Comment: {info.Comment}</CardSubtitle>
-                <CardSubtitle>Salty Score: {info.SaltyScore}</CardSubtitle>
                 <Button onClick={() => saveComment(info.Comment_ID)}>Save Comment</Button>
             </CardBody>
     </Card> 
