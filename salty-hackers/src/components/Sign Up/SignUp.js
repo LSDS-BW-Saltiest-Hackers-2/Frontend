@@ -6,6 +6,8 @@ import * as yup from 'yup';
 import formSchema from '../../validation/formSchema';
 
 
+
+
 const intaialFormValues = {
     username: '',
     password: ''
@@ -99,9 +101,7 @@ const intaialFormValues = {
       return (
           
           <div>
-            <Link to='/login'>
-              <button>Login</button>
-            </Link>
+            
             
           
               <Route path='/sign-up'> 
