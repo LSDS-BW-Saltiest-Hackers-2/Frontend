@@ -3,6 +3,9 @@ import Comment from "./Comment"
 import { Route } from 'react-router-dom';
 import { axiosWithAuth } from '../../utils/axiosWithAuth'
 
+import './CommentFeed.css'
+
+
 
 
 function CommentFeed() {
@@ -11,12 +14,13 @@ function CommentFeed() {
 
     //get comments 
         useEffect(() => { 
-            axiosWithAuth().get(`https://saltyhackers2.herokuapp.com/users/`)
+            axiosWithAuth().get(`https://saltyhackers2.herokuapp.com/users/1/AllComments`)
             .then(res => {
                 console.log('this should only render once!')
                 console.log(res)
                 addComments(res.data)
-                console.log(comments)})
+                console.log(comments)
+            })
             .catch(err => {
                 console.log('nope')
                 })
@@ -26,8 +30,6 @@ function CommentFeed() {
         <Route path='/feed'>
             <div className='feed-container'>
                 <div className='feed-list'>
-
-                    <div>I'm here!</div>
 
                     {
                         comments.map(comment => {
