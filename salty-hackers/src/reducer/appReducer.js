@@ -2,15 +2,23 @@ import {
     FETCH_SAVED_COMMENTS_START,
     FETCH_SAVED_COMMENTS_SUCCESS,
     FETCH_SAVED_COMMENTS_FAILURE,
-    SAVE_COMMENT_SUCCESS,
-    SAVE_COMMENT_FAILURE,
+    // EDIT_SAVE_COMMENT_SUCCESS,
+    // EDIT_SAVE_COMMENT_FAILURE,
     REMOVE_SAVED_COMMENT_SUCCESS,
     REMOVE_SAVED_COMMENT_FAILURE
 } from '../action/appAction';
 
 const initialState = {
     isFetchingSavedComments: false,
-    savedComments: []
+    comments: [
+        {
+            Comment: '',
+            Comment_ID: 0,
+            Deleted: '',
+            StoryID: 0,
+            UserName: ''  
+        }
+    ]
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -33,21 +41,23 @@ export const appReducer = (state = initialState, action) => {
         case FETCH_SAVED_COMMENTS_SUCCESS:
             return {
                 ...state,
-                isFetchingSavedComments: false
+                isFetchingSavedComments: false,
+                comments: action.payload
             }
         case FETCH_SAVED_COMMENTS_FAILURE:
             return {
-                ...state
+                ...state,
+                isFetchingSavedComments: false
             }
-        //=============SAVE COMMENT BELOW====================
-        case SAVE_COMMENT_SUCCESS:
-            return {
-                ...state
-            }
-        case SAVE_COMMENT_FAILURE:
-            return {
-                ...state
-            }
+        //=============EDIT SAVE COMMENT BELOW====================
+        // case EDIT_SAVE_COMMENT_SUCCESS:
+        //     return {
+        //         ...state
+        //     }
+        // case EDIT_SAVE_COMMENT_FAILURE:
+        //     return {
+        //         ...state
+        //     }
         default:
             return state;
     };

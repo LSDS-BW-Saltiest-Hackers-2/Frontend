@@ -38,6 +38,9 @@ const intaialFormValues = {
         axios.post(url, newUser)
         .then(res => {
           console.log(res.data, 'user created')
+          const id = res.data.data.id;
+          console.log(res.data.data.id, '<--res.data.data.id consolelog')
+          localStorage.setItem("id", id)
           addUsers([res.data, ...users])
         })
         .catch(err => {

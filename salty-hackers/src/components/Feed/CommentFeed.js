@@ -11,15 +11,26 @@ import './CommentFeed.css'
 function CommentFeed() {
 
     const [ comments, addComments ] = useState([])
+    
+
+    const saveComment = ( comment_id ) => {
+            const id2 = localStorage.getItem('id')
+            axiosWithAuth()
+            .post(`https://saltyhackers2.herokuapp.com/users/${id2}/comment/${comment_id}/saved-comments/`)
+            .then(res => {
+                console.log('SAVED COMMENT SUCCEEDED -->', res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
     //get comments 
         useEffect(() => { 
             axiosWithAuth().get(`https://saltyhackers2.herokuapp.com/users/1/AllComments`)
             .then(res => {
-                console.log('this should only render once!')
-                console.log(res)
+                console.log(res.data, '<----get request for all comments')
                 addComments(res.data)
-                console.log(comments)
             })
             .catch(err => {
                 console.log('nope')
@@ -33,7 +44,7 @@ function CommentFeed() {
 
                     {
                         comments.map(comment => {
-                        return <Comment key={comment.id} info={comment}/>
+                        return <Comment key={comment.id} info={comment} saveComment={saveComment}/>
                         })
 
                     }
