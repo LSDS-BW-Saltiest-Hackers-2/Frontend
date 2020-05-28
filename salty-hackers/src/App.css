@@ -32,7 +32,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 25px;
   border-bottom: 1px solid #efefef;
   margin-bottom: 32px;
 }
@@ -44,19 +44,40 @@ nav {
 }
 
 
-.nav-links a {
+.nav-links a:first-child {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-right: 8px;
+  background-color: #00BABA; 
+  padding: 10px;
+  padding-left: 13px;
+  padding-right: 15px;
+  border-radius: 25px;
+}
+
+.nav-links a:first-child:hover {
+  color: #FF4500; 
+  
+}
+
+
+.nav-links a:last-child {
   text-decoration: none;
   color: white;
   font-weight: bold;
   margin-right: 8px;
   background-color: #FF4500; 
   padding: 10px;
+  padding-left: 13px;
+  padding-right: 15px;
   border-radius: 25px;
 }
 
 .nav-links a:hover {
-  background-color: #00BABA; 
+  color: #00BABA; 
 }
+
 
 .logo {
   text-decoration: none;

@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+
+import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
+import './SignUpForm.css'
 
 export default function SignUpForm(props) {
 
@@ -12,37 +15,46 @@ export default function SignUpForm(props) {
 
     return (
 
-        <form onSubmit={onSubmit} > 
-            <h2>Sign Up</h2>
+        <div className='form-container'>
+            <Form onSubmit={onSubmit} > 
+                <h1>Sign Up</h1>
 
-        <div>
-              
+            <div>
                 <div>{errors.username}</div>
                 <div>{errors.password}</div>
-        </div>
+            </div>
 
-            <label>Username&nbsp;
-                <input
-                    value={values.username}
-                    onChange={onInputChange}
-                    name='username'
-                    type='text'
-                />
-            </label>
-
-            <label>Password&nbsp;
-                <input
+            <FormGroup>
+                <Label>Username&nbsp;
+                    <Input
+                        value={values.username}
+                        onChange={onInputChange}
+                        name='username'
+                        type='text'
+                    />
+                </Label>
+            </FormGroup>
+            
+        <FormGroup>
+            <Label>Password&nbsp;
+                <Input
                     value={values.password}
                     onChange={onInputChange}
                     name='password'
                     type='text'
                 />
-            </label>
+            </Label>
+        </FormGroup>
+            
+            <Button style={{backgroundColor:'#FF4500', fontWeight:'bold'}} disabled={disabled}>Submit</Button>
+
+        </Form>
+        
+    </div>
 
 
-            <button disabled={disabled}>Submit</button>
 
-        </form>
+        
     )
 
 

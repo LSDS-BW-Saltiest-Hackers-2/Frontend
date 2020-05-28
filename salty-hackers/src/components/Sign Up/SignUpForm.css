@@ -1,0 +1,23 @@
+
+.form-container {
+
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 1%;
+    background-color: #D3D3D3;
+    width: 20%;
+    border-radius: 30px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+
+
+
+}
+
+.form-container h1 {
+    font-size: 28px;
+    margin-bottom: 8%;
+   
+}
