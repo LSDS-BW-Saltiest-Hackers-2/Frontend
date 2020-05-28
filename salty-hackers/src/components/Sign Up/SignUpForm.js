@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import './SignUpForm.css'
 
 export default function SignUpForm(props) {
@@ -45,10 +45,12 @@ export default function SignUpForm(props) {
                 />
             </Label>
         </FormGroup>
-            
-            <Button style={{backgroundColor:'#FF4500', fontWeight:'bold'}} disabled={disabled}>Submit</Button>
 
+            <Button style={{backgroundColor:'#FF4500', 
+            fontWeight:'bold'}} disabled={disabled}>
+                Submit</Button>
         </Form>
+
         
     </div>
 

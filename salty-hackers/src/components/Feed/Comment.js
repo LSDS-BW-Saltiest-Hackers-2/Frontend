@@ -12,13 +12,13 @@ export default function Comment (props) {
     return (
     <div>
        
-    <Card style={{ backgroundColor: '#333', 
-        borderColor: '#333', borderRadius: '25px', 
-        margin: '20px', padding: '20px', fontFamily: 'Courier New'}}>
-            <CardBody inverse style= {{color: 'white'}}>
-                <CardSubtitle>Text: {info.comment}</CardSubtitle>
-                <CardSubtitle>Score: {info.likes_total}</CardSubtitle>
-                <CardTitle>Date: {info.created_at}</CardTitle>
+    <Card style={{ backgroundColor: '#f6f6ef', borderRadius: '25px', 
+        margin: '20px', padding: '20px'}}>
+            <CardBody inverse style= {{color: 'black'}}>
+                <CardTitle>Username: {info.UserName}</CardTitle>
+                <CardSubtitle>Comment: {info.Comment}</CardSubtitle>
+                <CardSubtitle>Salty Score: {info.SaltyScore}</CardSubtitle>
+                
             </CardBody>
     </Card>
     
