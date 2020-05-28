@@ -6,29 +6,24 @@ import {
 
 
 export default function Comment (props) {
+    
+    const { info, saveComment } = props
 
-    const { info } = props
-
-
+    // console.log(props, '<-- Comment consolelog')
     return (
-    <div>
-       
-    <Card style={{ backgroundColor: '#333', 
-        borderColor: '#333', borderRadius: '25px', 
-        margin: '20px', padding: '20px', fontFamily: 'Courier New'}}>
-            <CardBody inverse style= {{color: 'white'}}>
-                <CardSubtitle>Text: {info.comment}</CardSubtitle>
-                <CardSubtitle>Score: {info.likes_total}</CardSubtitle>
-                <CardTitle>Date: {info.created_at}</CardTitle>
-                <Button >Save Comment</Button>
+
+    
+    <Card style={{ backgroundColor: '#f6f6ef', borderRadius: '25px', 
+        margin: '20px', padding: '20px'}}>
+            <CardBody inverse style= {{color: 'black'}}>
+                <CardTitle>Username: {info.UserName}</CardTitle>
+                <CardSubtitle>Comment: {info.Comment}</CardSubtitle>
+                <CardSubtitle>Salty Score: {info.SaltyScore}</CardSubtitle>
+                <Button onClick={() => saveComment(info.Comment_ID)}>Save Comment</Button>
             </CardBody>
     </Card> 
-    </div>
+    
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        state
-    }
-}
+

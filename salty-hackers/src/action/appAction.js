@@ -1,21 +1,11 @@
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 // DOUBLE CHECK THE URL FOR SAVED COMMENTS IS CORRECT 
-export const SAVE_COMMENT_SUCCESS = 'SAVE_COMMENT_SUCCESS';
-export const SAVE_COMMENT_FAILURE = 'SAVE_COMMENT_FAILURE';
-export const saveComment = savedComment => {
-    return dispatch => {
-        axiosWithAuth()
-            .post('https://saltyhackers2.herokuapp.com/users/comment/1/saved-comments', savedComment)
-            .then(res => {
-                console.log('SAVED COMMENT SUCCEEDED -->', res)
-                // dispatch({ type: SAVE_COMMENT_SUCCESS, payload: res.data })
-            })
-            .catch(err => {
-                console.log(err)
-                dispatch({ type: SAVE_COMMENT_FAILURE, payload: console.log(err, '<----SAVE COMMENT FAILURE')})
-            })
-    }
-}
+// export const SAVE_COMMENT_SUCCESS = 'SAVE_COMMENT_SUCCESS';
+// export const SAVE_COMMENT_FAILURE = 'SAVE_COMMENT_FAILURE';
+// export const editSavedComment = ( commentID, savedComment) => {
+//     return dispatch => {
+//     }
+// }
 
 export const FETCH_SAVED_COMMENTS_START = 'FETCH_SAVED_COMMENTS_START'; 
 export const FETCH_SAVED_COMMENTS_SUCCESS = 'FETCH_SAVED_COMMENTS_SSUCCESS'; 
