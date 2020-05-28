@@ -6,6 +6,8 @@ import * as yup from 'yup';
 import formSchema from '../../validation/formSchema';
 
 
+
+
 const intaialFormValues = {
     username: '',
     password: ''
@@ -99,6 +101,7 @@ const intaialFormValues = {
       return (
           
           <div>
+
               <Route path='/sign-up'> 
                 <SignUpForm values = {formValues} onSubmit = {onSubmit}
                 onInputChange = {onInputChange} errors = {formErrors} disabled={disabled} />
