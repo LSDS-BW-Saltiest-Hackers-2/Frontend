@@ -1,13 +1,14 @@
 import React from 'react'
 import {
     Card, CardBody,
-    CardTitle, CardSubtitle
+    CardTitle, CardSubtitle, Button
   } from 'reactstrap';
 
 
 export default function Comment (props) {
 
     const { info } = props
+
 
     return (
     <div>
@@ -19,14 +20,15 @@ export default function Comment (props) {
                 <CardSubtitle>Text: {info.comment}</CardSubtitle>
                 <CardSubtitle>Score: {info.likes_total}</CardSubtitle>
                 <CardTitle>Date: {info.created_at}</CardTitle>
+                <Button >Save Comment</Button>
             </CardBody>
-    </Card>
-    
-        
-        
+    </Card> 
     </div>
-
     )
-    
-    
+}
+
+const mapStateToProps = state => {
+    return {
+        state
+    }
 }

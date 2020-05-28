@@ -10,7 +10,15 @@ import {
 
 const initialState = {
     isFetchingSavedComments: false,
-    savedComments: []
+    comments: [
+        {
+            Comment: '',
+            Comment_ID: 0,
+            Deleted: '',
+            StoryID: 0,
+            UserName: ''  
+        }
+    ]
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -33,11 +41,13 @@ export const appReducer = (state = initialState, action) => {
         case FETCH_SAVED_COMMENTS_SUCCESS:
             return {
                 ...state,
-                isFetchingSavedComments: false
+                isFetchingSavedComments: false,
+                comments: action.payload
             }
         case FETCH_SAVED_COMMENTS_FAILURE:
             return {
-                ...state
+                ...state,
+                isFetchingSavedComments: false
             }
         //=============SAVE COMMENT BELOW====================
         case SAVE_COMMENT_SUCCESS:

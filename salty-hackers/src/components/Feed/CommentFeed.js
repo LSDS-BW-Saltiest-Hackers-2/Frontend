@@ -11,7 +11,7 @@ function CommentFeed() {
 
     //get comments 
         useEffect(() => { 
-            axiosWithAuth().get(`https://saltyhackers2.herokuapp.com/users/`)
+            axiosWithAuth().get(`https://saltyhackers2.herokuapp.com/users/1/Allcomments`)
             .then(res => {
                 console.log('this should only render once!')
                 console.log(res)
