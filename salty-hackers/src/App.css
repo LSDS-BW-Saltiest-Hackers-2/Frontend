@@ -57,7 +57,7 @@ nav {
 }
 
 .nav-links a:first-child:hover {
-  color: #FF4500; 
+  opacity: 0.6
   
 }
 
@@ -75,7 +75,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #00BABA; 
+  opacity: 0.6
 }
 
 

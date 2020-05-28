@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Comment from "./Comment"
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { axiosWithAuth } from '../../utils/axiosWithAuth'
 
 
@@ -26,6 +26,8 @@ function CommentFeed() {
         <Route path='/feed'>
             <div className='feed-container'>
                 <div className='feed-list'>
+
+                    <div>I'm here!</div>
 
                     {
                         comments.map(comment => {

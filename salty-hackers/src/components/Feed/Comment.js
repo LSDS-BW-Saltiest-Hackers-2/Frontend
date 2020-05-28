@@ -12,7 +12,7 @@ export default function Comment (props) {
     return (
     <div>
        
-        <Card inverse style={{ backgroundColor: '#333', 
+    <Card style={{ backgroundColor: '#333', 
         borderColor: '#333', borderRadius: '25px', 
         margin: '20px', padding: '20px', fontFamily: 'Courier New'}}>
             <CardBody inverse style= {{color: 'white'}}>
@@ -20,7 +20,7 @@ export default function Comment (props) {
                 <CardSubtitle>Score: {info.likes_total}</CardSubtitle>
                 <CardTitle>Date: {info.created_at}</CardTitle>
             </CardBody>
-        </Card>
+    </Card>
     
         
         
