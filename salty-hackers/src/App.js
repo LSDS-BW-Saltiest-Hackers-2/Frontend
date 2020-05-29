@@ -72,7 +72,7 @@ function App() {
           <PrivateRoute exact path='/feed' component={CommentFeed}/>
           <Route exact path='/sign-up' component={SignUp}/>
           <Route exact path='/login' component={Login} />
-          <Route exact component={Login} />
+          <Route component={Login} />
         </Switch>
       </div>
     </Router>

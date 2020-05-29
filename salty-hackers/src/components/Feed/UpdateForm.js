@@ -34,7 +34,6 @@ const UpdateForm = (props) => {
         const commentSaved = {
             commentSaved: comment.commentSaved,
       }
-      // console.log("Form Submit: ", props.updateAuction(dataSubmit))
       props.editSavedComment(id, commentSaved)
       push(`/saved-comments`)
     };
