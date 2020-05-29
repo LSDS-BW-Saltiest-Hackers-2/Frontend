@@ -26,25 +26,25 @@ function App() {
   useEffect(() => {
     gsap.to(
       logoItem,
-      1,
+      2,
       {
-        y: 20,
+        y: 30,
       }
     )
 
     gsap.to(
       navItem1,
-      1,
+      2,
       {
-        y: 20,
+        y: 30,
       }
     )
 
     gsap.to(
       navItem2,
-      1,
+      2,
       {
-        y: 20,
+        y: 30,
       }
     )
   }, [])

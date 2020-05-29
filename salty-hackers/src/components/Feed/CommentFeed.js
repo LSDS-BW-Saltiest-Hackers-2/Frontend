@@ -19,9 +19,9 @@ function CommentFeed(props) {
     useEffect(() => { 
         gsap.to(
         commentsDiv,
-        2.5,
+        3,
         {
-          y: 50,
+          y: 100,
           opacity: 1
         }
       )}, [])
