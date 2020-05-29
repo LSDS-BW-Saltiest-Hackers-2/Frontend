@@ -22,7 +22,7 @@ const Comment = (props) => {
 
     <Card style={{ backgroundColor: '#f6f6ef',  margin: '1%', width: '25rem'}}>
             <CardBody>
-                <CardImg src={image} style = {{marginBottom: '5%'}}></CardImg>
+                <CardImg src={image} style = {{marginBottom: '5%', width: '100%'}}></CardImg>
                 <h2>Username: {info.UserName}</h2>
                 <p>Comment: {stripHtml(info.Comment)}</p>
                 <p style={{fontWeight:'bold'}}>Saltiness: {info.Saltiness}</p>

@@ -21,7 +21,7 @@ function CommentFeed(props) {
         commentsDiv,
         3,
         {
-          y: 100,
+          y: 75,
           opacity: 1
         }
       )}, [])
