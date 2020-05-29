@@ -26,7 +26,7 @@ export default function Comment (props) {
                 <CardTitle style={{fontWeight: 'bold'}}>Username: {info.UserName}</CardTitle>
                 <CardSubtitle style={{color:'#FF4500', fontWeight:'bold'}}>Salty Score: {info.Saltiness}</CardSubtitle>
                 <CardText>Comment:{info.Comment}</CardText>
-                <Button onClick={() => saveComment(info.Comment_ID)}>Save Comment</Button>
+                <Button onClick={() => saveComment(info.Comment_ID)} style={{backgroundColor:'#00BABA', borderColor:'#00BABA'}}>Save Comment</Button>
             </CardBody>
     </Card> 
     
