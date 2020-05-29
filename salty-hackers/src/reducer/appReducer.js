@@ -2,23 +2,18 @@ import {
     FETCH_SAVED_COMMENTS_START,
     FETCH_SAVED_COMMENTS_SUCCESS,
     FETCH_SAVED_COMMENTS_FAILURE,
-    // EDIT_SAVE_COMMENT_SUCCESS,
-    // EDIT_SAVE_COMMENT_FAILURE,
+    EDIT_SAVED_COMMENT_SUCCESS,
+    EDIT_SAVED_COMMENT_FAILURE,
     REMOVE_SAVED_COMMENT_SUCCESS,
-    REMOVE_SAVED_COMMENT_FAILURE
+    REMOVE_SAVED_COMMENT_FAILURE,
+    SAVE_COMMENT,
+    SAVE_COMMENT2
 } from '../action/appAction';
 
 const initialState = {
     isFetchingSavedComments: false,
-    comments: [
-        {
-            Comment: '',
-            Comment_ID: 0,
-            Deleted: '',
-            StoryID: 0,
-            UserName: ''  
-        }
-    ]
+    commentSaved: [],
+    savedComments: []
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -26,11 +21,12 @@ export const appReducer = (state = initialState, action) => {
         //=============REMOVE SAVED COMMENTS=====================
         case REMOVE_SAVED_COMMENT_FAILURE:
             return {
-                ...state,
+                ...state
             }
         case REMOVE_SAVED_COMMENT_SUCCESS:
             return {
                 ...state,
+                savedComments: action.payload
             }
         //=============FETCH SAVED COMMENTS BELOW====================
         case FETCH_SAVED_COMMENTS_START:
@@ -42,22 +38,29 @@ export const appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetchingSavedComments: false,
-                comments: action.payload
+                savedComments: action.payload
             }
         case FETCH_SAVED_COMMENTS_FAILURE:
             return {
                 ...state,
                 isFetchingSavedComments: false
             }
+
+        case SAVE_COMMENT:
+            return {
+                ...state,
+                savedComments: action.payload
+            }
         //=============EDIT SAVE COMMENT BELOW====================
-        // case EDIT_SAVE_COMMENT_SUCCESS:
-        //     return {
-        //         ...state
-        //     }
-        // case EDIT_SAVE_COMMENT_FAILURE:
-        //     return {
-        //         ...state
-        //     }
+        case EDIT_SAVED_COMMENT_SUCCESS:
+            return {
+                ...state,
+                savedComments: [...state.savedComments, action.payload]
+            }
+        case EDIT_SAVED_COMMENT_FAILURE:
+            return {
+                ...state
+            }
         default:
             return state;
     };
