@@ -21,13 +21,12 @@ const Comment = (props) => {
     return (
 
     <Card style={{ backgroundColor: '#f6f6ef',  margin: '1%', width: '25rem'}}>
-            <CardBody style= {{color: 'black'}}>
-                <CardImg src={image} style = {{marginBottom: '5%' }}></CardImg>
-                <CardTitle style={{fontWeight: 'bold'}}>Username: {info.UserName}</CardTitle>
-                <CardSubtitle style={{color:'#FF4500', fontWeight:'bold'}}>Salty Score: {info.Saltiness}</CardSubtitle>
-                <CardText>Comment: {stripHtml(info.Comment)}</CardText>
-                
-                <Button onClick={() => props.saveComment(info.Comment_ID)} style={{backgroundColor:'#00BABA', borderColor:'#00BABA'}}>Save</Button>
+            <CardBody>
+                <CardImg src={image} style = {{marginBottom: '5%', width: '100%'}}></CardImg>
+                <h2>Username: {info.UserName}</h2>
+                <p>Comment: {stripHtml(info.Comment)}</p>
+                <p style={{fontWeight:'bold'}}>Saltiness: {info.Saltiness}</p>
+            <Button onClick={() => props.saveComment(info.Comment_ID)} style={{backgroundColor:'#00BABA', borderColor:'#00BABA'}}>Save</Button>
             </CardBody>
     </Card> 
     

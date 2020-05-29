@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom'
@@ -8,6 +8,12 @@ import LoadingSpinner from '../Styling/LoadingSpinner';
 
 import { removeSavedComment } from '../../action/appAction';
 import { fetchSavedComments } from '../../action/appAction';
+
+import { Card, CardBody, CardImg } from 'reactstrap';
+import image from './blank-profile-picture.png';
+import './CommentFeed.css'
+
+
 
 const SavedComments = (props) => {
     const { push } = useHistory();
@@ -19,6 +25,8 @@ const SavedComments = (props) => {
     useEffect(() => {
         props.fetchSavedComments();
     }, [])
+
+
     
     return (
         <main>
@@ -26,13 +34,16 @@ const SavedComments = (props) => {
             {!isFetchingSavedComments && (
                 <div className='saved-comments-container'>
                     {savedComments.map(item => (
-                        <div key={Math.random()}>
-                            <h2>Username: {item.username}</h2>
-                            <p>Comment: {stripHtml(item.commentSaved)}</p>
-                            <p>Saltiness: {item.Saltiness}</p>
-                            <Button onClick={() => push(`/edit-comment/${item.id}`)}>Edit</Button>
-                            <Button onClick={() => push(`/delete-comment/${item.id}`)}>Delete</Button>
-                        </div>
+                        <Card style={{ backgroundColor: '#f6f6ef',  margin: '1%', width: '25rem'}} key={Math.random()}>
+                            <CardBody> 
+                                <CardImg src={image} style = {{marginBottom: '5%'}}></CardImg>
+                                <h2>Username: {item.username}</h2>
+                                <p>Comment: {stripHtml(item.commentSaved)}</p>
+                                <p style={{fontWeight:'bold'}}>Saltiness: {item.Saltiness}</p>
+                                <Button onClick={() => push(`/edit-comment/${item.id}`)} style={{backgroundColor:'#00BABA', borderColor:'#00BABA', marginRight:'1rem'}}>Edit</Button>
+                                <Button onClick={() => push(`/delete-comment/${item.id}`)} style={{backgroundColor:'#FF4500', borderColor:'#FF4500', marginRight:'1rem'}}>Delete</Button>  
+                            </CardBody>      
+                        </Card>
                     ))}
                 </div>
             )}

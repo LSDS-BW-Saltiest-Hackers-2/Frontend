@@ -56,7 +56,9 @@ nav {
 }
 
 .nav-links a:first-child:hover {
-  opacity: 0.6
+  opacity: 0.6;
+  animation: wobble;
+  
   
 }
 
