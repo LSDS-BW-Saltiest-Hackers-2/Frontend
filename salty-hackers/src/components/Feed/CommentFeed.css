@@ -1,5 +1,14 @@
 .feed-container {
     width: 80%;
     margin: auto;
+
 }
+
+.feed-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 

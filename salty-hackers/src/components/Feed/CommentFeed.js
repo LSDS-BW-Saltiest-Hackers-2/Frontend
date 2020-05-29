@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { axiosWithAuth } from '../../utils/axiosWithAuth'
 
 import './CommentFeed.css'
+import { CardGroup} from 'reactstrap';
 
 
 
@@ -48,7 +49,7 @@ function CommentFeed() {
                         })
 
                     }
-                        
+              
                 </div>
             </div>
         
