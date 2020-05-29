@@ -53,7 +53,7 @@ function CommentFeed(props) {
 
                     {
                         comments.map(comment => {
-                        return <Comment key={comment.Comment_ID} info={comment} saveComment={saveComment}/>
+                        return <Comment key={comment.Comment_ID} info={comment}/>
 
                         })
 
