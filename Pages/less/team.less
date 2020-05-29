@@ -1,0 +1,20 @@
+section.team{
+    .flex-box(@justify: space-around, @align: start);
+    flex-wrap: wrap;
+    margin: 5%;
+    div{
+        .flex-box(@direction:column);
+        width: 44%;
+        @media @phone {
+            width:88%;
+        }
+        img{
+            width: 50%;
+            border-radius: 40px;
+        }//img
+        p{
+            text-align: center;
+            padding: 5% 0;
+        }//p
+    }//div
+}//section.team

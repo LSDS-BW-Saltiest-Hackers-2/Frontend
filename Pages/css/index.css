@@ -1,0 +1,277 @@
+.login-button {
+  background-color: #FF4500;
+  color: white;
+  border-radius: 20px;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 65.5%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: 'Roboto', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #FFF5EE;
+}
+body h1 {
+  font-size: 4rem;
+}
+body h2 {
+  font-size: 3rem;
+}
+body h3 {
+  font-size: 2rem;
+}
+body .container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+header {
+  background-color: white;
+  border-radius: 40px 40px 0 0;
+  margin: 5% 5% 0 5%;
+}
+header div.nav {
+  padding: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: start;
+}
+@media (max-width:500px) {
+  header div.nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+header div.nav h2 {
+  font-size: 2rem;
+}
+header div.nav nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: start;
+  width: 40%;
+}
+@media (max-width:500px) {
+  header div.nav nav {
+    width: 100%;
+  }
+}
+header div.nav nav a {
+  text-decoration: none;
+  color: black;
+  padding: 2% 8%;
+}
+header div.nav nav a.login {
+  background-color: #FF4500;
+  color: white;
+  border-radius: 20px;
+}
+header div.title {
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width:500px) {
+  header div.title h1 {
+    text-align: center;
+  }
+}
+header div.title p {
+  padding-top: 5%;
+  text-align: center;
+}
+header div.title nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: start;
+  padding: 5%;
+  width: 40%;
+}
+@media (max-width:500px) {
+  header div.title nav {
+    flex-direction: column;
+  }
+}
+header div.title nav a {
+  padding: 2% 8%;
+  background-color: #FF4500;
+  color: white;
+  border-radius: 20px;
+}
+@media (max-width:500px) {
+  header div.title nav a {
+    margin-bottom: 20%;
+  }
+}
+header div.title nav a.sign {
+  background-color: #00BABA;
+}
+section.splash {
+  max-width: 1200px;
+  padding: 0 5%;
+}
+section.splash img {
+  width: 100%;
+}
+section.content {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: start;
+  flex-wrap: wrap;
+}
+@media (max-width:500px) {
+  section.content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+section.content div {
+  margin: 5% 1%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+}
+@media (max-width:500px) {
+  section.content div {
+    width: 91%;
+  }
+}
+section.content div img {
+  width: 100%;
+}
+section.content div h3 {
+  text-align: center;
+  padding: 5% 0;
+}
+section.team {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-direction: start;
+  flex-wrap: wrap;
+  margin: 5%;
+}
+section.team div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 44%;
+}
+@media (max-width:500px) {
+  section.team div {
+    width: 88%;
+  }
+}
+section.team div img {
+  width: 50%;
+  border-radius: 40px;
+}
+section.team div p {
+  text-align: center;
+  padding: 5% 0;
+}
+footer p {
+  text-align: center;
+}
