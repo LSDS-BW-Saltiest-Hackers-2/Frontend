@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Comment from "./Comment"
 import { Route } from 'react-router-dom';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 import './CommentFeed.css'
+import gsap from 'gsap'
 
 
 
@@ -11,6 +12,20 @@ import './CommentFeed.css'
 function CommentFeed(props) {
 
     const [ comments, addComments ] = useState([])
+
+    let commentsDiv = useRef(null)
+
+    useEffect(() => { 
+        gsap.to(
+        commentsDiv,
+        2,
+        {
+          y: 50,
+          opacity: 1
+        }
+      )}, [])
+   
+
     const [ savedComments, setSavedComments ] = useState([]);
 
     
@@ -33,16 +48,17 @@ function CommentFeed(props) {
 
     return (
         <Route path='/feed'>
-            <div className='feed-container'>
-                <div className='feed-list'>
+            <div ref={el => {commentsDiv=el}} className='feed-container'>
+                <div  className='feed-list'>
 
                     {
                         comments.map(comment => {
-                        return <Comment key={comment.id} info={comment}/>
+                        return <Comment key={comment.Comment_ID} info={comment} saveComment={saveComment}/>
+
                         })
 
                     }
-                        
+              
                 </div>
             </div>
         

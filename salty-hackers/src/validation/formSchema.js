@@ -3,7 +3,7 @@ import * as yup from 'yup'
 const formSchema = yup.object().shape({
    
     username: yup.string()
-    .required('Please create a password'),
+    .required('Please create a username'),
     password: yup.string()
     .trim()
     .required('Please create a password')
