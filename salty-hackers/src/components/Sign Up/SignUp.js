@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SignUpForm from './SignUpForm';
-import { Route, Link} from 'react-router-dom';
+import { Route, Link, useHistory } from 'react-router-dom';
 import * as yup from 'yup';
 import formSchema from '../../validation/formSchema';
-
-
 
 
 const intaialFormValues = {
@@ -25,6 +23,7 @@ const intaialFormValues = {
   const url = `https://saltyhackers2.herokuapp.com/auth/register`
 
   export default function SignUp() {
+    const { push } = useHistory();
     //state
 
     const [ formValues, setFormValues ] = useState(intaialFormValues)
@@ -87,10 +86,9 @@ const intaialFormValues = {
             username: formValues.username.trim(),
             password: formValues.password.trim(),
           }
-
           console.log(newUser)
-      
           postNewUser(newUser)
+          push(`/login`)
           }
 
   useEffect(() => {
