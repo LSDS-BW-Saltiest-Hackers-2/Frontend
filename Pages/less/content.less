@@ -1,0 +1,22 @@
+section.content{
+    .flex-box(@align: start);
+    flex-wrap: wrap;
+    @media @phone{
+        flex-direction: column;
+        align-items: center;
+    }
+    div{
+        margin: 5% 1%;
+        .flex-box(@direction: column, @justify: start);
+        width: 30%;
+        @media @phone{
+            width: 91%;
+        }        img{
+            width: 100%;
+        }//img
+        h3{
+            text-align: center;
+            padding: 5% 0;
+        }//h2
+    }//div
+}//section.content
