@@ -12,23 +12,20 @@ import gsap from 'gsap'
 function CommentFeed(props) {
 
     const [ comments, addComments ] = useState([])
+    const [ savedComments, setSavedComments ] = useState([]);
 
     let commentsDiv = useRef(null)
 
     useEffect(() => { 
         gsap.to(
         commentsDiv,
-        2,
+        2.5,
         {
           y: 50,
           opacity: 1
         }
       )}, [])
    
-
-    const [ savedComments, setSavedComments ] = useState([]);
-
-    
 
     useEffect(() => {
         console.log(savedComments)
@@ -50,20 +47,14 @@ function CommentFeed(props) {
         <Route path='/feed'>
             <div ref={el => {commentsDiv=el}} className='feed-container'>
                 <div  className='feed-list'>
-
                     {
                         comments.map(comment => {
-                        return <Comment key={comment.Comment_ID} info={comment} saveComment={saveComment}/>
-
+                        return <Comment key={comment.Comment_ID} info={comment} />
                         })
-
                     }
-              
                 </div>
             </div>
-        
-        </Route>
-        
+        </Route>     
     )
 }
 
