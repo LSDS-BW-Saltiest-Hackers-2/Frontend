@@ -7,7 +7,6 @@ import {
     REMOVE_SAVED_COMMENT_SUCCESS,
     REMOVE_SAVED_COMMENT_FAILURE,
     SAVE_COMMENT,
-    SAVE_COMMENT2
 } from '../action/appAction';
 
 const initialState = {

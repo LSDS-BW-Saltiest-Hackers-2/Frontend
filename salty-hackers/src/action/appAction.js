@@ -18,14 +18,6 @@ export const fetchSavedComments = () => {
     }
 } 
 
-export const SAVE_COMMENT2 = 'SAVE_COMMENT2'
-export const saveComment2 = comment => {
-    console.log('this is working')
-    return dispatch => {
-        dispatch({ type: SAVE_COMMENT, payload: comment})
-    }
-}
-
 export const SAVE_COMMENT = 'SAVE_COMMENT'
 export const saveComment = ( comment_id ) => {
     return dispatch => {
