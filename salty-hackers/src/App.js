@@ -3,7 +3,10 @@ import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
 import Login from './components/Login/Login';
 import CommentFeed from './components/Feed/CommentFeed';
-import SignUp from './components/Sign Up/SignUp'
+import SignUp from './components/Sign Up/SignUp';
+import SavedComments from './components/Feed/SavedComments';
+import UpdateForm from './components/Feed/UpdateForm';
+import DeleteComment from './components/Feed/DeleteComment';
 
 import PrivateRoute from './utils/PrivateRoute';
 
@@ -26,12 +29,13 @@ function App() {
             </nav>
         </div>
         <Switch>
-          <PrivateRoute exact path='/saved-comments' />
-          {/* <PrivateRoute exact path='/feed' component={CommentFeed} /> */}
-          <Route path='/sign-up' component={SignUp}/>
-          <Route path='/login' component={Login} />
-          <Route path='/feed' component={CommentFeed}/>
-          <Route component={Login} />
+          <PrivateRoute exact path='/saved-comments' component={SavedComments}/>
+          <PrivateRoute exact path='/edit-comment/:id' component={UpdateForm} />
+          <PrivateRoute exact path='/delete-comment/:id' component={DeleteComment} />
+          <PrivateRoute exact path='/feed' component={CommentFeed}/>
+          <Route exact path='/sign-up' component={SignUp}/>
+          <Route exact path='/login' component={Login} />
+          <Route exact component={Login} />
         </Switch>
       </div>
     </Router>

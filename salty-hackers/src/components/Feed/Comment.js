@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     Card, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
 
+import { connect } from 'react-redux';
+import { saveComment } from '../../action/appAction';
+import stripHtml from "string-strip-html";
 
-export default function Comment (props) {
-    
-    const { info, saveComment } = props
+const Comment = (props) => {
+        
+    const { info } = props
 
     // console.log(props, '<-- Comment consolelog')
     return (
@@ -17,13 +20,22 @@ export default function Comment (props) {
         margin: '20px', padding: '20px'}}>
             <CardBody inverse style= {{color: 'black'}}>
                 <CardTitle>Username: {info.UserName}</CardTitle>
-                <CardSubtitle>Comment: {info.Comment}</CardSubtitle>
-                <CardSubtitle>Salty Score: {info.SaltyScore}</CardSubtitle>
-                <Button onClick={() => saveComment(info.Comment_ID)}>Save Comment</Button>
+                <CardSubtitle>Comment: {stripHtml(info.Comment)}</CardSubtitle>
+                <CardSubtitle>Salty Score: {info.Saltiness}</CardSubtitle>
+                <Button onClick={() => props.saveComment(info.Comment_ID)}>Save</Button>
             </CardBody>
     </Card> 
     
     )
+
+    }
+const mapStateToProps = state => {
+    return {
+        state
+    }
 }
 
-
+export default connect(
+    mapStateToProps,
+    { saveComment }
+)(Comment)
