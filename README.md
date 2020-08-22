@@ -24,9 +24,9 @@ View The Website Here: [Project Website](https://nervous-colden-ddbad4.netlify.a
 
 ## Future Improvements:
 
-[] Resolve styling issue with saved comment dimensions
-[] Routing to saved-comments page requires refresh from first time crash
-[] Style sign-up/log-in form to have more content space 
+- [ ] Resolve styling issue with saved comment dimensions
+- [ ] Routing to saved-comments page requires refresh from first time crash
+- [ ] Style sign-up/log-in form to have more content space 
 
 
 
