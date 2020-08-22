@@ -1,6 +1,34 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Project website: https://nervous-colden-ddbad4.netlify.app
+## Build Week Project - Saltiest Hackers Feed
+
+View The Website Here:[Project Website](https://nervous-colden-ddbad4.netlify.app)
+<br />
+
+### Languages & Technologies Used:
+
+* React
+* Javascript
+* Redux
+* Reactstrap
+* Green Sock
+* yup
+
+## Features:
+
+* Signup / Login Flow
+* Save Comments to Profile
+* View Saved Comments
+* Remove Saved Comments
+* Edit Saved Comments
+
+## Future Improvements:
+
+[] Resolve styling issue with saved comment dimensions
+[] Routing to saved-comments page requires refresh from first time crash
+[] Style sign-up/log-in form to have more content space 
+
+
 
 ## Available Scripts
 
